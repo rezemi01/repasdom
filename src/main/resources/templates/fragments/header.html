@@ -1,0 +1,37 @@
+<meta charset="utf-8" />
+<nav xmlns:th="http://www.thymeleaf.org"
+     xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+     th:fragment="header"
+     class="navbar navbar-expand-lg navbar-dark bg-info">
+    <a class="navbar-brand" href="#">Repas à domicile</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        	<li class="nav-item active">
+        	    <a class="nav-link" href="#" th:href="@{/RepasDom}">Home</a>
+        	</li>
+            <li class="nav-item" sec:authorize="!isAuthenticated()">
+                <a class="nav-link" href="#" th:href="@{/register}">
+                    S'inscrire
+                </a>
+            </li>
+            <li class="nav-item" sec:authorize="!isAuthenticated()">
+                <a class="nav-link" href="#" th:href="@{/login}">
+                    Se connecter
+                </a>
+            </li>
+            <li class="nav-item" sec:authorize="hasRole('ADMIN')">
+                <a class="nav-link" href="#" th:href="@{/admin}">
+                    Administration Panel
+                </a>
+            </li>
+            <li class="nav-item" sec:authorize="isAuthenticated()">
+                <form method="post" action="#" th:action="@{/logout}">
+                    <button class="btn btn-link nav-link" type="submit">Se déconnecter (<span sec:authentication="principal.username"></span>)</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>

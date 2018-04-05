@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8" />
+<head th:replace="fragments/head :: head"></head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+	<div class="container">
+	    <div class="row">
+		   	<p class="col-3" th:text="${menu.date}"></p>
+		   	<p class="col-9" th:text="${menu.nom}"/>
+		</div>
+		<div class="row" th:each="menuJour: ${menu.menuDuJour}">
+			<img class="picture2" th:src="${menuJour.plat.imageUrl}">
+			<p class="col-1" th:text="${menuJour.plat.typePlat.libelle} + ':'"></p>
+			<p class="col-4" th:text="${menuJour.plat.description}"></p>
+			<p class="col-1" th:text="${menuJour.prix} + ' €'"></p>
+		</div>
+		<br>
+		<div class="row">
+			<a href="#" class="btn btn-outline-info">Commander</a>
+		</div>
+	</div>
+</body>
+</html>
+
+<!--  
+div bloc mettre en forme
+span => appliquer un style a une partie (un mot d un text en rouge)
+p => text
+image
+li -> ul = list
+a => link 
+h1, h2, ... = titre
+<table>
+</table>-->
+
+<!-- Where place static css file in a spring-boot project : Anywhere beneath src/main/resources/static is an appropriate place
+ for static content such as CSS, JavaScript, and images. The static directory is served from /.
+ For example, src/main/resources/static/signin.css will be served from /signin.css whereas src/main/resources/static/css/signin.css 
+ will be served from /css/signin.css. -->
+
+ <!-- si problème de rafraîchissement : ctrl F5 permet de vide le cache -->

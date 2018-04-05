@@ -74,18 +74,30 @@ public class DbInit implements InitializingBean {
 		platService.create("Poêlée de pommes et poires caramélisées", "Pommes et poires caramélisées, miel et glace vanille.", "https://maison2.advcdn.net/images/medias/000/016/000016418/660.jpg", typePlat);
 
 		// Création temporaire des menus
-		LocalDate date = LocalDate.of(2018, 04, 3);
+		LocalDate date = LocalDate.of(2018, 04, 7);
 		menuService.create("Menu 1", "Soupe concombre - Spaghetti bolognèse - Glace à la fraise", "", date);
-		date = LocalDate.of(2018, 04, 4);
-		menuService.create("Menu 2", "Soupe potiron - Quiche bacon - Tiramisu", "", date);
-		date = LocalDate.of(2018, 04, 5);
-		menuService.create("Menu 3", "Chèvre chaud - Darne de saumon - Crème caramel", "", date);
-		date = LocalDate.of(2018, 04, 6);
-		menuService.create("Menu 4", "Soupe de poireaux - Boeuf bourguignon - Mousse au chocolat", "", date);
-		date = LocalDate.of(2018, 04, 7);
-		menuService.create("Menu 5", "Carpaccio de boeuf - Cabillaud - Tartelette au citron", "", date);
 		date = LocalDate.of(2018, 04, 8);
-		menuService.create("Menu 6", "Tomate farcie surimi - Poulet basquaise - Poêlée pommes poires ", "", date);
+		menuService.create("Menu 2", "Soupe potiron - Quiche bacon - Tiramisu", "", date);
+		date = LocalDate.of(2018, 04, 9);
+		menuService.create("Menu 3", "Chèvre chaud - Darne de saumon - Crème caramel", "", date);
+		date = LocalDate.of(2018, 04, 10);
+		menuService.create("Menu 4", "Soupe de poireaux - Boeuf bourguignon - Mousse au chocolat", "", date);
+		date = LocalDate.of(2018, 04, 11);
+		menuService.create("Menu 5", "Carpaccio de boeuf - Cabillaud - Tartelette au citron", "", date);
+		date = LocalDate.of(2018, 04, 12);
+		menuService.create("Menu 6", "Tomate farcie surimi - Poulet basquaise - Poêlée pommes poires", "", date);
+		date = LocalDate.of(2018, 04, 13);
+		menuService.create("Menu 7", "Tomate farcie surimi - Darne de saumon - Tiramisu", "", date);
+		date = LocalDate.of(2018, 04, 14);
+		menuService.create("Menu 8", "Soupe de poireaux - Boeuf bourguignon - Glace à la fraise", "", date);
+		date = LocalDate.of(2018, 04, 15);
+		menuService.create("Menu 9", "Soupe concombre - Cabillaud - Poêlée pommes poires", "", date);
+		date = LocalDate.of(2018, 04, 16);
+		menuService.create("Menu 10", "Soupe de poireaux - Quiche bacon - Crème caramel", "", date);
+		date = LocalDate.of(2018, 04, 17);
+		menuService.create("Menu 11", "Soupe potiron - Spaghetti bolognèse - Mousse au chocolat", "", date);
+		date = LocalDate.of(2018, 04, 18);
+		menuService.create("Menu 12", "Chèvre chaud - Poulet basquaise - Tartelette au citron", "", date);
 		
 		// Création temporaire des menus du jour
 		Menu menu1 = menuRepository.findByNom("Menu 1");
@@ -136,6 +148,54 @@ public class DbInit implements InitializingBean {
 		plat3 = platRepository.findByNom("Poêlée de pommes et poires caramélisées");
 		menuDuJourService.create(menu6, plat3, 3.5);		
 
+		Menu menu7 = menuRepository.findByNom("Menu 7");
+		plat1 = platRepository.findByNom("Farci de la mer sur son lit de salade");
+		menuDuJourService.create(menu7, plat1, 2.5);
+		plat2 = platRepository.findByNom("Darne de saumon");
+		menuDuJourService.create(menu7, plat2, 4.5);
+		plat3 = platRepository.findByNom("Tiramisu");
+		menuDuJourService.create(menu7, plat3, 2.5);
+		
+		Menu menu8 = menuRepository.findByNom("Menu 8");
+		plat1 = platRepository.findByNom("Soupe de poireaux");
+		menuDuJourService.create(menu8, plat1, 2.5);
+		plat2 = platRepository.findByNom("Boeuf bourguignon");
+		menuDuJourService.create(menu8, plat2, 3.85);
+		plat3 = platRepository.findByNom("Glace à la compote de fraise");
+		menuDuJourService.create(menu8, plat3, 2.5);		
+
+		Menu menu9 = menuRepository.findByNom("Menu 9");
+		plat1 = platRepository.findByNom("Soupe de concombre");
+		menuDuJourService.create(menu9, plat1, 3.5);
+		plat2 = platRepository.findByNom("Cabillaud à la parisienne");
+		menuDuJourService.create(menu9, plat2, 6.5);
+		plat3 = platRepository.findByNom("Poêlée de pommes et poires caramélisées");
+		menuDuJourService.create(menu9, plat3, 2.5);		
+		
+		Menu menu10 = menuRepository.findByNom("Menu 10");
+		plat1 = platRepository.findByNom("Soupe de poireaux");
+		menuDuJourService.create(menu10, plat1, 2.5);
+		plat2 = platRepository.findByNom("Quiche au bacon");
+		menuDuJourService.create(menu10, plat2, 6.75);
+		plat3 = platRepository.findByNom("Crème caramel");
+		menuDuJourService.create(menu10, plat3, 2.5);		
+
+		Menu menu11 = menuRepository.findByNom("Menu 11");
+		plat1 = platRepository.findByNom("Soupe de potiron");
+		menuDuJourService.create(menu11, plat1, 3.5);
+		plat2 = platRepository.findByNom("Spaghetti bolognèse");
+		menuDuJourService.create(menu11, plat2, 6.5);
+		plat3 = platRepository.findByNom("Mousse au chocolat");
+		menuDuJourService.create(menu11, plat3, 3.5);		
+
+		Menu menu12 = menuRepository.findByNom("Menu 12");
+		plat1 = platRepository.findByNom("Chèvre chaud");
+		menuDuJourService.create(menu12, plat1, 3.5);
+		plat2 = platRepository.findByNom("Poulet basquaise");
+		menuDuJourService.create(menu12, plat2, 6.5);
+		plat3 = platRepository.findByNom("Tartelette au citron");
+		menuDuJourService.create(menu12, plat3, 3.5);		
+		
 		
 	}
 

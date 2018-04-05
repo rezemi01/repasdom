@@ -1,5 +1,18 @@
-.little-picture {
-	width: 150px;
-	height: 150px;
+.picture1 {
+	width: 140px;
+	height: 140px;
 	display: inline-block;
+}
+
+.picture2 {
+	width: 80px;
+	height: 80px;
+	display: inline-block;
+}
+
+
+/* font */
+div {
+	font-family: Arial;
+    font-size: 15px;
 }

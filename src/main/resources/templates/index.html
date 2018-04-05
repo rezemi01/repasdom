@@ -3,31 +3,24 @@
 <meta charset="utf-8" />
 <head th:replace="fragments/head :: head"></head>
 <body>
+<div th:replace="fragments/header :: header"></div>
 <div class="container">
     <div class="row">
-        <div class="col-12">
-            <h1 class="p-4 text-center bg-info">Repas à domicile</h1>
-        </div>
-    </div>
-    <div class="row">
         <div class="col-6" th:each="menu: ${menus}">
-        <p th:text="${menu.date}"></p>
-        <p th:text="${menu.nom}"></p>
-        <p th:text="${menu.description}"></p>
-        <div class="row">
-        	<div class="col-4" th:each="menuJour: ${menu.menuDuJour}">
-	        	<img th:src="${menuJour.plat.imageUrl}" class="little-picture"/>
-<!--             <p th:text="${event.type}"></p> -->
-<!--             <p class="text-left" th:text="${event.title}"></p> -->
-<!--             <p th:text="${event.dateTime}"></p> -->
-<!--             <p th:text="${event.price}"></p> -->
-        	</div>
-        </div>
-        <br />
-        <a class="btn btn-outline-info" href="#">Commander</a>
-        <br />  
-    </div>
-</div>
+        	<br>
+	        <p th:text="${menu.date}"></p>
+	        <a class="text-info" href="#" th:href="@{/AfficherMenu/} + ${menu.id}" th:text="${menu.nom}"></a>
+	        <p th:text="${menu.description}"></p>
+	        <br>
+	        <div class="row">
+	        	<div class="col-4" th:each="menuJour: ${menu.menuDuJour}">
+		        	<img th:src="${menuJour.plat.imageUrl}" class="picture1"/>
+	        	</div>
+    	    </div>
+	        <br>
+	        <br>
+	    </div>
+	</div>
 </div>
 </body>
 </html>

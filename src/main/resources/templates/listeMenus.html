@@ -7,7 +7,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-6" th:each="menu: ${menus}">
-		    <p th:text="${menu.date}"></p>
+		    <h5 th:text="${menu.date}"></h5>
 	        <a class="text-info" href="#" th:href="@{/AfficherMenu/} + ${menu.id}" th:text="${menu.nom}"></a>
 			<br>
 			<div class="card-group">

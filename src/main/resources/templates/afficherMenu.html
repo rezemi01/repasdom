@@ -14,7 +14,21 @@
 			<p class="col-1" th:text="${menuJour.plat.typePlat.libelle} + ':'"></p>
 			<p class="col-4" th:text="${menuJour.plat.description}"></p>
 			<p class="col-1" th:text="${menuJour.prix} + ' €'"></p>
+	        <label for="quantity" class="col-1 control-label" th:text="'Quantité:'"></label>
+	        <div class="col-1">
+		        <select class="form-control" id="quantity">
+		          <option>0</option>
+		          <option>1</option>
+		          <option>2</option>
+		          <option>3</option>
+		          <option>4</option>
+		          <option>5</option>
+		          <option>6</option>
+		        </select>          
+			</div>    			
+			
 		</div>
+		
 		<br>
 		<div class="row">
 			<a href="#" class="btn btn-outline-info">Commander</a>
